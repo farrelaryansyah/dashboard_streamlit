@@ -52,10 +52,10 @@ Jika ingin melakukan **deploy ke Streamlit Cloud**, ikuti langkah ini:
 
 1. **Tambahkan file `requirements.txt`** di GitHub:
    ```
-   matplotlib==3.10.1
-   pandas==2.2.3
-   seaborn==0.13.2
    streamlit==1.42.2
+   pandas==2.2.3
+   matplotlib==3.10.1
+   seaborn==0.13.2
 
    ```
 
