@@ -3,9 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# ===================== #
 # Load Data
-# ===================== #
 @st.cache_data
 def load_data():
     day_df = pd.read_csv("day.csv")
@@ -19,15 +17,13 @@ def load_data():
 
 day_df, hour_df = load_data()
 
-# ===================== #
 # Sidebar (Filter Rentang Waktu)
-# ===================== #
 min_date = day_df["date"].min()
 max_date = day_df["date"].max()
 
 with st.sidebar:
     # Menambahkan logo perusahaan
-    st.image("/Users/user/Documents/Dashboard/foto.jpeg")
+    st.image("/Users/user/Documents/Dashboard/dataset/foto.jpeg")
 
     # Input rentang tanggal
     start_date, end_date = st.date_input(
@@ -41,16 +37,13 @@ with st.sidebar:
 filtered_day_df = day_df[(day_df["date"] >= pd.Timestamp(start_date)) & (day_df["date"] <= pd.Timestamp(end_date))]
 filtered_hour_df = hour_df[(hour_df["date"] >= pd.Timestamp(start_date)) & (hour_df["date"] <= pd.Timestamp(end_date))]
 
-# ===================== #
 # Header
-# ===================== #
 st.title("🚲 Bike Sharing Dashboard")
 st.write("Analisis pola penyewaan sepeda berdasarkan waktu, pengaruh cuaca, dan RFM Analysis.")
 st.markdown("---")
 
-# ===================== #
-# 1️⃣ Pola Penyewaan Sepeda Berdasarkan Waktu dalam Sehari
-# ===================== #
+
+# 1. Pola Penyewaan Sepeda Berdasarkan Waktu dalam Sehari
 st.header("📊 Pola Penyewaan Sepeda Berdasarkan Waktu dalam Sehari")
 
 # Agregasi data per jam setelah filter
@@ -78,9 +71,8 @@ st.write("""
   Setelah puncak pagi, penyewaan menurun tetapi tetap cukup stabil dari pukul **10 pagi hingga 15 sore**.  
 """)
 
-# ===================== #
-# 2️⃣ Pengaruh Cuaca terhadap Penyewaan Sepeda (Diperbaiki)
-# ===================== #
+
+# 2. Pengaruh Cuaca terhadap Penyewaan Sepeda (Diperbaiki)
 st.header("🌤️ Pengaruh Cuaca terhadap Penyewaan Sepeda")
 
 # Agregasi data per kondisi cuaca setelah filter (menggunakan hour_df)
@@ -88,7 +80,7 @@ weather_rentals = filtered_hour_df.groupby("weathersit")["cnt"].mean()
 
 # Plot
 fig, ax = plt.subplots(figsize=(8, 5))
-sns.barplot(x=weather_rentals.index, y=weather_rentals.values, palette=["#92BCEA", "#D3D3D3", "#E6A189", "#8B0000"])
+sns.barplot(x=weather_rentals.index, y=weather_rentals.values, palette=["#8ba5e9", "#c8d5ee", "#ebcdbe", "#dd8e79"])
 
 ax.set_xlabel("Kategori Cuaca", fontsize=12)
 ax.set_ylabel("Rata-rata Penyewaan Sepeda", fontsize=12)
@@ -109,12 +101,11 @@ st.write("""
   Saat hujan deras, penyewaan sepeda menjadi paling rendah, menunjukkan bahwa pengguna cenderung menghindari bersepeda dalam kondisi ekstrem.   
 """)
 
-# ===================== #
-# 3️⃣ RFM Analysis
-# ===================== #
+
+# 3. RFM Analysis Penyewaan Sepeda
 st.header("📈 RFM Analysis untuk Penyewaan Sepeda")
 
-# Data RFM (dummy, silakan ganti dengan perhitungan RFM yang sesuai)
+# Data RFM
 rfm_hour = pd.DataFrame({
     "hr": range(24),
     "RFM_Score": ["121", "111", "111", "111", "111", "111", "212", "223", "224", "223", "222",
@@ -145,12 +136,11 @@ st.write("""
   Penyewaan tetap cukup tinggi di siang hari (12:00 - 15:00), yang kemungkinan digunakan untuk rekreasi atau perjalanan santai.
 """)
 
-# ===================== #
-# Visualisasi RFM Analysis berdasarkan Cuaca
-# ===================== #
+
+# 4. RFM Analysis berdasarkan Cuaca
 st.header("🌦️ RFM Analysis: Pengaruh Cuaca terhadap Penyewaan Sepeda")
 
-# Contoh data RFM berdasarkan cuaca (silakan ganti dengan data aktual)
+# Data RFM berdasarkan cuaca
 rfm_weather = pd.DataFrame({
     "weather_cond": [1, 2, 3],
     "RFM_Score": [144, 322, 411],
@@ -178,7 +168,5 @@ st.write("""
   - Penyewaan paling sedikit terjadi saat hujan ringan atau lebih buruk, menunjukkan dampak besar kondisi cuaca terhadap jumlah pengguna.  
 """)
 
-# ===================== #
 # Footer
-# ===================== #
 st.markdown("---")
