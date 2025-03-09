@@ -22,7 +22,7 @@ min_date = day_df["date"].min()
 max_date = day_df["date"].max()
 
 with st.sidebar:
-    st.image("/Users/user/Documents/Dashboard/dataset/foto.jpeg")
+    st.image("https://raw.githubusercontent.com/farrelaryansyah/dashboard_streamlit/refs/heads/main/foto.jpeg")
 
     # Input rentang tanggal
     start_date, end_date = st.date_input(
