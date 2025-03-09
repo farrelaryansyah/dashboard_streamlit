@@ -19,7 +19,7 @@ Dataset yang digunakan terdapat di dalam repository ini. Pastikan Anda telah men
    ```python
    import pandas as pd
    day_df = pd.read_csv('day.csv')
-   hour_df = pd.read_csv('hour.csv)
+   hour_df = pd.read_csv('hour.csv')
    ```
 
 ---
