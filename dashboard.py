@@ -22,7 +22,6 @@ min_date = day_df["date"].min()
 max_date = day_df["date"].max()
 
 with st.sidebar:
-    # Menambahkan logo perusahaan
     st.image("/Users/user/Documents/Dashboard/dataset/foto.jpeg")
 
     # Input rentang tanggal
