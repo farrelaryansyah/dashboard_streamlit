@@ -46,6 +46,13 @@ Untuk memastikan lingkungan pengembangan siap digunakan, lakukan langkah berikut
    ```sh
    python -c "import streamlit, pandas, matplotlib, seaborn)"
    ```
+### Menggunakan Google Colab
+1.⁠ ⁠Unduh proyek notebook.ipynb dan dataset.
+2.⁠ ⁠Buka Google Colab di browser Anda.
+3.⁠ ⁠Buat notebook baru.
+4.⁠ ⁠Upload file notebook.ipynb⁠ dan dataset.
+5.⁠ ⁠Hubungkan ke runtime yang tersedia.
+6.⁠ ⁠Jalankan sel-sel kode.
 
 ---
 
