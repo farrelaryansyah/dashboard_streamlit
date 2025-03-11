@@ -64,11 +64,11 @@ st.pyplot(fig)
 st.write("""
 📌 **Insight:**  
 - **Puncak Penyewaan pada Pagi & Sore Hari**  
-  Terdapat dua puncak utama sekitar pukul **7-9 pagi** dan **17-19 sore**.
+  Terdapat dua puncak utama sekitar pukul 7-9 pagi dan 17-19 sore.
 - **Penyewaan Rendah di Tengah Malam & Dini Hari**  
-  Jam **0-5 pagi** memiliki penyewaan sangat rendah.  
+  Jam 0-5 pagi memiliki penyewaan sangat rendah.  
 - **Penyewaan Stabil di Siang Hari**  
-  Setelah puncak pagi, penyewaan menurun tetapi tetap cukup stabil dari pukul **10 pagi hingga 15 sore**.  
+  Setelah puncak pagi, penyewaan menurun tetapi tetap cukup stabil dari pukul 10 pagi hingga 15 sore.  
 """)
 
 
