@@ -7,7 +7,7 @@ Dashboard interaktif berbasis Streamlit untuk menganalisis pola penyewaan sepeda
 ## 📊 Fitur Dashboard
 1. **Pola Penyewaan Sepeda**: Analisis penyewaan berdasarkan waktu dalam sehari.
 2. **Pengaruh Cuaca terhadap Penyewaan**: Visualisasi dampak kondisi cuaca pada jumlah penyewaan.
-3. **Analisis RFM**: Segmentasi pengguna berdasarkan kebiasaan penyewaan sepeda.
+3. **Analisis Clustering Manual**: Segmentasi pengguna berdasarkan pola penyewaan sepeda dengan pengelompokan berdasarkan waktu penggunaan, frekuensi peminjaman, dan kondisi cuaca.
 
 ---
 
@@ -46,13 +46,6 @@ Untuk memastikan lingkungan pengembangan siap digunakan, lakukan langkah berikut
    ```sh
    python -c "import streamlit, pandas, matplotlib, seaborn)"
    ```
-### Menggunakan Google Colab
-   1. Unduh proyek notebook.ipynb dan dataset.
-   2.⁠ ⁠Buka Google Colab di browser Anda.
-   3.⁠ ⁠Buat notebook baru.
-   4.⁠ ⁠Upload file notebook.ipynb⁠ dan dataset.
-   5.⁠ ⁠Hubungkan ke runtime yang tersedia.
-   6.⁠ ⁠Jalankan sel-sel kode.
 
 ---
 
@@ -82,6 +75,14 @@ pip install streamlit pandas matplotlib seaborn
    streamlit run dashboard.py
    ```
 3. Buka browser dan akses **`http://localhost:8501`**.
+
+## Menggunakan Google Colab
+   1. Unduh proyek notebook.ipynb dan dataset.
+   2.⁠ ⁠Buka Google Colab di browser Anda.
+   3.⁠ ⁠Buat notebook baru.
+   4.⁠ ⁠Upload file notebook.ipynb⁠ dan dataset.
+   5.⁠ ⁠Hubungkan ke runtime yang tersedia.
+   6.⁠ ⁠Jalankan sel-sel kode.
 
 ---
 
