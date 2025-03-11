@@ -1,6 +1,6 @@
 # 🚲 Bike Sharing Dashboard
 
-Dashboard interaktif berbasis Streamlit untuk menganalisis pola penyewaan sepeda berdasarkan waktu, pengaruh cuaca, dan Analisis RFM.
+Dashboard interaktif berbasis Streamlit untuk menganalisis pola penyewaan sepeda berdasarkan Waktu, Pengaruh Cuaca, dan Analisis Clustering.
 
 ---
 
