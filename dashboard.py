@@ -119,10 +119,10 @@ time_labels = ['Dini Hari', 'Pagi Hari', 'Siang Hari', 'Sore Hari', 'Malam Hari'
 hour_bins = [0, 6, 12, 16, 19, 24]
 
 # Buat kategori langsung saat agregasi
-hour_df["time_category"] = pd.cut(hour_df["hr"], bins=hour_bins, labels=time_labels, right=False)
+filtered_hour_df["time_category"] = pd.cut(filtered_hour_df["hr"], bins=hour_bins, labels=time_labels, right=False)
 
 # Agregasi data berdasarkan kategori waktu
-time_trend = hour_df.groupby("time_category")["cnt"].mean().reindex(time_labels)
+time_trend = filtered_hour_df.groupby("time_category")["cnt"].mean().reindex(time_labels)
 
 # Plot
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -153,10 +153,10 @@ st.header("🌦️ Analisis Lanjutan Pola Penyewaan Sepeda Berdasarkan Kategori 
 
 # Mapping kondisi cuaca ke kategori yang lebih mudah dipahami
 weather_mapping = {1: "Cerah", 2: "Mendung", 3: "Hujan Ringan", 4: "Hujan Deras"}
-hour_df["weather_category"] = hour_df["weathersit"].map(weather_mapping)
+filtered_hour_df["weather_category"] = filtered_hour_df["weathersit"].map(weather_mapping)
 
 # Agregasi data berdasarkan kategori cuaca
-weather_trend = hour_df.groupby("weather_category")["cnt"].mean().reindex(['Cerah', 'Mendung', 'Hujan Ringan', 'Hujan Deras'])
+weather_trend = filtered_hour_df.groupby("weather_category")["cnt"].mean().reindex(['Cerah', 'Mendung', 'Hujan Ringan', 'Hujan Deras'])
 
 # Plot
 fig, ax = plt.subplots(figsize=(10, 5))
